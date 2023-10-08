@@ -1,0 +1,30 @@
+{
+  "name": "@loyal-heart/utils",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "dev": "tsc -w",
+    "lint": "eslint --fix \"src/**/*.ts*\"",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "@loyal-heart/jest-presets/jest/node"
+  },
+  "devDependencies": {
+    "@loyal-heart/eslint-config-custom": "*",
+    "@loyal-heart/jest-presets": "*",
+    "@loyal-heart/tsconfig": "*",
+    "@types/jest": "^29.5.3",
+    "eslint": "^8.45.0",
+    "jest": "^29.6.1",
+    "typescript": "^5.1.6"
+  }
+}

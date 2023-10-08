@@ -1,0 +1,23 @@
+{
+  "name": "@loyal-heart/types",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./dist/index.js",
+  "source": "./src/index.ts",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist/**"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "lint": "eslint --fix \"src/**/*.ts*\""
+  },
+  "devDependencies": {
+    "@loyal-heart/db": "*",
+    "@loyal-heart/eslint-config-custom": "*",
+    "@loyal-heart/tsconfig": "*",
+    "eslint": "^8.45.0",
+    "typescript": "^5.1.6"
+  }
+}

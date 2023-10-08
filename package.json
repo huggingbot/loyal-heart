@@ -1,0 +1,32 @@
+{
+  "name": "loyal-heart",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "predev": "docker network inspect dev_network >/dev/null 2>&1 || docker network create --driver bridge dev_network",
+    "dev": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.dev.yml up --build",
+    "prestart": "docker network inspect app_network >/dev/null 2>&1 || docker network create --driver bridge app_network",
+    "start": "COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose -f docker-compose.yml up --build",
+    "build": "turbo run build",
+    "clean": "turbo run clean",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "update": "turbo run npx npm-check-updates",
+    "kysely-codegen": "turbo run kysely-codegen --filter=db"
+  },
+  "devDependencies": {
+    "@loyal-heart/eslint-config-custom": "*",
+    "prettier": "^3.0.0",
+    "turbo": "latest"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=9.0.0"
+  },
+  "packageManager": "npm@9.6.2",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ]
+}
